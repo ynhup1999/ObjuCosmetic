@@ -1,0 +1,41 @@
+﻿@model Cosmetic.Models.ThuongHieu
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<br />
+<br />
+
+<h3>Bạn có chắc chắn xóa @Html.DisplayFor(model => model.TenHieu) ? </h3>
+<div>
+    <h4>Thông tin</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MaHieu)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MaHieu)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TenHieu)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TenHieu)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Hinh)
+        </dt>
+        <dd>
+            <img src="~/Hinh/beauty/@Model.Hinh" height="100" />
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="MaHieu" />
+        <input type="submit" value="Xóa" class="btn btn-default" /> <br /> <br />
+        <a asp-action="Index">Quay về</a>
+    </form>
+</div>

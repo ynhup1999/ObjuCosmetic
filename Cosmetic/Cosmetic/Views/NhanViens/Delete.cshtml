@@ -1,0 +1,47 @@
+﻿@model Cosmetic.Models.NhanVien
+
+@{
+    ViewData["Title"] = "| Xóa nhân viên";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<br />
+<br />
+
+<h3>Bạn có chắc chắn xóa @Html.DisplayFor(model => model.HoTen) ? </h3>
+<div>
+    <h4>Thông tin nhân viên</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MaNv)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MaNv)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.HoTen)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.HoTen)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MatKhau)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MatKhau)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="MaNv" />
+        <input type="submit" value="Xóa" class="btn btn-default" /> <br /><br />
+        <a asp-action="Index">Quay về</a>
+    </form>
+</div>
